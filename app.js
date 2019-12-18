@@ -1,5 +1,4 @@
 const endDate = document.querySelector('input[name="endDate"]');
-// console.log(endDate);
 const clock = document.querySelector('.clock');
 let timeInterval;
 let timeStop = true;
