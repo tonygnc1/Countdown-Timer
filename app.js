@@ -12,17 +12,14 @@ if (savedValue) {
 endDate.addEventListener('change', function(e) {
   e.preventDefault();
   clearInterval(timeInterval);
-    console.log(endDate.value);
   const temp = new Date(endDate.value);
   localStorage.setItem('countdown', temp);
-    console.log(temp);
   startClock(temp);
 });
 
 function startClock(d) {
   function updateCounter() {
     let tl = timeLeft(d);
-    console.log(tl);
     if (tl.total <= 0) {
       timeStop = false;
     }
@@ -44,12 +41,7 @@ function startClock(d) {
 
 function timeLeft(d) {
   let currentDate = new Date();
-//   console.log(Date.parse(d));
-//   console.log(currentDate);
-//   console.log(Date.parse(currentDate));
   let t = Date.parse(d) - Date.parse(currentDate);
-  // console.log(t);
-
   let seconds = Math.floor((t / 1000) % 60);
   let minutes = Math.floor((t / 1000 / 60) % 60);
   let hours = Math.floor((t / (1000 * 60 * 60)) % 24);
